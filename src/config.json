@@ -1,0 +1,6 @@
+{
+  "apiUrl": "http://localhost:3004/",
+  "admin": "admin",
+  "user": "user",
+  "name": "name"
+}
