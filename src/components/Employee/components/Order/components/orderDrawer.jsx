@@ -12,7 +12,6 @@ import {
   Row,
   Col,
 } from "antd";
-import { MinusCircleOutlined } from "@ant-design/icons";
 
 // Services
 import { getTable } from "../../../../../services/tableServices";
@@ -24,15 +23,6 @@ import { openNotification } from "../../../../custom";
 const layout = {
   labelCol: { span: 6 },
   wrapperCol: { span: 24 },
-};
-const formItemLayout = {
-  labelCol: { span: 6 },
-};
-const formItemLayoutWithOutLabel = {
-  wrapperCol: {
-    offset: 6,
-    span: 24,
-  },
 };
 
 const OrderDrawer = ({ visible, onClose, handleAdd }) => {
@@ -120,52 +110,13 @@ const OrderDrawer = ({ visible, onClose, handleAdd }) => {
           </Select>
         </Form.Item>
 
-        <Form.List label="Quantity" name="quantity">
-          {(fields, { add, remove }) => {
-            return (
-              <div>
-                {fields.map((field, index) => (
-                  <Form.Item
-                    {...(index === 0
-                      ? formItemLayout
-                      : formItemLayoutWithOutLabel)}
-                    label={index === 0 ? "Quantity" : ""}
-                    required
-                    key={field.key}
-                  >
-                    <Form.Item
-                      {...field}
-                      style={{ width: "100%" }}
-                      rules={[{ required: true, message: "Enter quantity" }]}
-                    >
-                      <Input placeholder="Enter quantity" />
-                    </Form.Item>
-                    {fields.length > 0 ? (
-                      <MinusCircleOutlined
-                        className="dynamic-delete-button"
-                        style={{ margin: "0 8px" }}
-                        onClick={() => {
-                          remove(field.name);
-                        }}
-                      />
-                    ) : null}
-                  </Form.Item>
-                ))}
-                <Form.Item>
-                  <Button
-                    type="dashed"
-                    onClick={() => {
-                      add();
-                    }}
-                    style={{ width: "60%", marginLeft: "7.8em" }}
-                  >
-                    Add quantity
-                  </Button>
-                </Form.Item>
-              </div>
-            );
-          }}
-        </Form.List>
+        <Form.Item
+          label="Quantity"
+          name="quantity"
+          placeholder="Enter Quantity"
+        >
+          <Input.TextArea className="border" />
+        </Form.Item>
 
         <Form.Item
           label="Time"

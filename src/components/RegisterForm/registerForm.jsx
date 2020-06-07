@@ -158,12 +158,12 @@ const Register = ({ history }) => {
                       label="Phone"
                       name="phone_number"
                       rules={[
-                        { required: true, message: "Please input phoneNumber" },
+                        { required: true, message: "Please Input PhoneNumber" },
                       ]}
                     >
                       <InputNumber
                         min={0}
-                        placeholder="enter Phone Number"
+                        placeholder="Enter Phone Number"
                         className="w-100"
                       />
                     </Form.Item>

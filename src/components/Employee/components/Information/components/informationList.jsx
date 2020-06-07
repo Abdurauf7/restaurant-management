@@ -46,9 +46,9 @@ const InformationList = ({ data }) => {
               <Card.Meta
                 title={
                   <Fragment>
-                    <ul className="p-3 border border-dark rounded">
+                    <ul className="bg-light p-3 border border-dark rounded">
                       <Row>
-                        <Col span={12}>
+                        <Col span={10}>
                           <Typography.Paragraph ellipsis className="mr-1">
                             {info.ordered_items.map((order) => (
                               <li key={order} style={{ listStyleType: "none" }}>
@@ -60,7 +60,13 @@ const InformationList = ({ data }) => {
 
                         <Col span={10}>
                           {info.price.map((price) => (
-                            <li key={price} style={{ listStyleType: "none" }}>
+                            <li
+                              key={price}
+                              style={{
+                                listStyleType: "none",
+                                marginLeft: "1.5em",
+                              }}
+                            >
                               ....................{price}¥
                             </li>
                           ))}

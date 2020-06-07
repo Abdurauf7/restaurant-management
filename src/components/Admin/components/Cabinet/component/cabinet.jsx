@@ -159,8 +159,8 @@ const Cabinet = ({
               <Col span={20}>
                 <Input
                   className="form-control"
+                  placeholder="Enter New Password"
                   type="password"
-                  value={password}
                   name="password"
                   onChange={handleChange}
                 />
