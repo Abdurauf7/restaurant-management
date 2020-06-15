@@ -1,5 +1,5 @@
 {
-  "apiUrl": "http://localhost:3004/",
+  "apiUrl": "http://localhost:3005/",
   "admin": "admin",
   "user": "user",
   "name": "name"

@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import { Card, Row, Col, Divider, Typography } from "antd";
 import { EditTwoTone, DeleteTwoTone } from "@ant-design/icons";
-
+import moment from "moment";
 const ReservationList = ({ data, deleteReservation, handleEdit }) => {
   return (
     <Fragment>
       <Row>
-        {data.map(reserv => (
+        {data.map((reserv) => (
           <Col key={reserv.id} xs={24} sm={12} md={12} lg={8} xl={6}>
             <Card
               key={reserv.id}
@@ -29,13 +29,15 @@ const ReservationList = ({ data, deleteReservation, handleEdit }) => {
                 <DeleteTwoTone
                   twoToneColor="#ff4500"
                   onClick={() => deleteReservation(reserv.id)}
-                />
+                />,
               ]}
             >
               <Card.Meta
                 title={<h4 className="text-dark">{`Seats:${reserv.seats}`}</h4>}
                 description={
-                  <p className="text-secondary">{`Date: ${reserv.date}`}</p>
+                  <p className="text-secondary">{`Date: ${moment(
+                    reserv.date
+                  ).format("llll")}`}</p>
                 }
               />
             </Card>

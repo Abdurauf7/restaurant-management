@@ -18,8 +18,6 @@ import {
 import { getTable } from "../../../../../services/tableServices";
 import { openNotification } from "../../../../custom";
 
-const { RangePicker } = DatePicker;
-
 const ReservationDrawer = ({ visible, onClose, onHandleAdd }) => {
   const [tableNumber, setTableNumber] = useState([]);
   const fetchTableNumber = async () => {
@@ -89,7 +87,7 @@ const ReservationDrawer = ({ visible, onClose, onHandleAdd }) => {
               name="date"
               rules={[{ required: true, message: "Choose the Date" }]}
             >
-              <RangePicker
+              <DatePicker
                 showTime
                 placeholder="Select the Date"
                 className="w-100"

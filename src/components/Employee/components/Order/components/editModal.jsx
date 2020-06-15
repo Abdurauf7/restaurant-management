@@ -125,7 +125,7 @@ const EditModal = ({ editableData, visible, handleUpdate, onClose }) => {
           placeholder="select time"
           rules={[{ required: true, message: "Enter ordered time" }]}
         >
-          <TimePicker />
+          <TimePicker format="HH:mm" />
         </Form.Item>
         <Form.Item name="id">
           <Typography />

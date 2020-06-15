@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 
 import { Row, Col, Card, Divider, Typography } from "antd";
 import { EditTwoTone, DeleteTwoTone } from "@ant-design/icons";
+import moment from "moment";
 
 const { Meta } = Card;
 
@@ -50,7 +51,7 @@ const OrderedList = ({ data, handleDelete, handleEdit }) => {
                 description={
                   <div>
                     <Divider />
-                    <h6>{`Time: ${data.time}`}</h6>
+                    <h6>{`Time: ${moment(data.time).format("LT")}`}</h6>
                   </div>
                 }
               />

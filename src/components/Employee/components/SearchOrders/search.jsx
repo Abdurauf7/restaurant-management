@@ -12,7 +12,7 @@ import {
   Typography,
   Input,
 } from "antd";
-
+import moment from "moment";
 // Tools
 import _ from "lodash";
 
@@ -123,7 +123,9 @@ const SearchOrder = () => {
                     }
                     description={
                       <div className="mt-5">
-                        <Typography.Text>{`Date: ${searchData.time}`}</Typography.Text>
+                        <Typography.Text>{`Time: ${moment(
+                          searchData.time
+                        ).format("LT")}`}</Typography.Text>
                       </div>
                     }
                   />

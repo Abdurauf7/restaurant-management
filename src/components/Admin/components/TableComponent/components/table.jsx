@@ -4,7 +4,7 @@ import React, { Fragment } from "react";
 // Third Part
 import { Table } from "antd";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
-
+import moment from "moment";
 // Functional Component
 const TableT = ({ data, deleteTableItems, editItems }) => {
   return (
@@ -29,8 +29,7 @@ const TableT = ({ data, deleteTableItems, editItems }) => {
       />
       <Table.Column
         title="Date"
-        dataIndex="date"
-        sorter={(a, b) => a.date.length - b.date.length}
+        render={(text, record) => moment(record.date).format("ll")}
       />
       <Table.Column
         fixed="right"

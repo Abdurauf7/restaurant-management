@@ -1,6 +1,6 @@
 // React
 import React, { useState, useEffect } from "react";
-
+import moment from "moment";
 // Third Part
 import { Layout, Input, Divider, Row, Col, Card, Typography } from "antd";
 import _ from "lodash";
@@ -20,8 +20,8 @@ const SearchReservation = () => {
   const fetchReservation = async () => {
     try {
       await getReservation()
-        .then(res => res.data)
-        .then(data => searchReserv(data));
+        .then((res) => res.data)
+        .then((data) => searchReserv(data));
     } catch (error) {
       openNotification("error", "Can't get data", "Check connection");
     }
@@ -33,7 +33,7 @@ const SearchReservation = () => {
   }, []);
 
   // searchMethod
-  const onSearchItem = value => {
+  const onSearchItem = (value) => {
     const name = value.currentTarget.value;
     const customer = _.filter(reserv, ["customer_name", name]);
     const newData = [...customer];
@@ -48,7 +48,7 @@ const SearchReservation = () => {
       <div style={{ background: "#fff", padding: 24, minHeight: 580 }}>
         <HeaderTitle title={"Search Reservation info"} />
         <Input
-          onChange={value => onSearchItem(value)}
+          onChange={(value) => onSearchItem(value)}
           placeholder="Enter Customer Name"
           className="w-100 mt-4"
         />
@@ -56,7 +56,7 @@ const SearchReservation = () => {
           <Divider />
         </div>
         <Row>
-          {findedData.map(f => (
+          {findedData.map((f) => (
             <Col key={f.id} span={8}>
               <Card
                 key={f.id}
@@ -85,9 +85,9 @@ const SearchReservation = () => {
                     >{`Seats: ${f.seats}`}</Typography.Title>
                   }
                   description={
-                    <Typography.Text
-                      level={4}
-                    >{`Date:${f.date}`}</Typography.Text>
+                    <Typography.Text level={4}>{`Date:${moment(f.date).format(
+                      "llll"
+                    )}`}</Typography.Text>
                   }
                 />
               </Card>

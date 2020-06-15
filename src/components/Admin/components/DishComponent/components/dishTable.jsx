@@ -4,6 +4,7 @@ import React, { Fragment } from "react";
 // Third part
 import { Table } from "antd";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
+import moment from "moment";
 
 // Funtional Component
 const DishTable = ({ data, deleteItem, editItem }) => {
@@ -26,8 +27,7 @@ const DishTable = ({ data, deleteItem, editItem }) => {
       />
       <Table.Column
         title="Date"
-        dataIndex="date"
-        sorter={(a, b) => a.date.length - b.date.length}
+        render={(text, record) => moment(record.date).format("ll")}
       />
       <Table.Column
         width={80}

@@ -76,9 +76,9 @@ const PrintBill = ({ location }) => {
             <Divider />
             <div className="text-left">
               <ul className="border rounded bg-light">
-                <li
-                  style={{ listStyle: "none" }}
-                >{`More Info: ${data.quantity}`}</li>
+                <li style={{ listStyle: "none" }}>{`More Info: ${
+                  data.quantity !== null ? data.quantity : "none"
+                }`}</li>
               </ul>
             </div>
             <div className="text-left" style={{ marginTop: "2em" }}>

@@ -102,7 +102,7 @@ const EditModal = ({ data, visible, onClose, handleUpdate }) => {
           name="date"
           rules={[{ required: true, message: "Enter date" }]}
         >
-          <DatePicker.RangePicker showTime />
+          <DatePicker showTime />
         </Form.Item>
         <Form.Item name="id">
           <Typography />

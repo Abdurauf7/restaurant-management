@@ -124,7 +124,7 @@ const OrderDrawer = ({ visible, onClose, handleAdd }) => {
           placeholder="select time"
           rules={[{ required: true, message: "Choose Ordered Time" }]}
         >
-          <TimePicker className="w-100" />
+          <TimePicker className="w-100" format="HH:mm" />
         </Form.Item>
         <Row>
           <Col offset={6} span={4}>
